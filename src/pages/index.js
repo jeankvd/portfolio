@@ -7,7 +7,10 @@ import Img from "gatsby-image"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm } from "../utils/typography"
-import Hero from "../components/index/Hero";
+import Hero from "../components/index/Hero"
+import Introduction from "../components/index/Introduction"
+import Projects from "../components/index/Projects"
+import { Container } from "../components/general/GeneralStyles"
 
 /* 
 https://kuon.space/
@@ -50,65 +53,46 @@ to {
 `
 
 const Blog = styled.div`
-  border-radius: 20px;
   /* overflow: hidden; */
-  box-shadow: 6px 2px 44px 10px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 0.625rem 1.25rem rgba(0, 0, 0, 0.2);
+  transition: all linear .2s;
+  border-radius: .25rem;
 
-  /* Frst of Blog */
-  &:nth-child(1) {
-    grid-column-start: 1;
-    grid-column-end: 4;
-    position: relative;
-    overflow: visible;
-    margin-bottom: 30px;
-
-    .gatsby-image-wrapper {
-      height: 350px;
-      border-radius: 9px;
-    }
-
-    > div:nth-child(2) {
-      position: absolute;
-      right: 10px;
-      bottom: -30px;
-      z-index: 12;
-      background: white;
-      max-width: 400px;
-      box-shadow: 6px 2px 44px 10px rgba(0, 0, 0, 0.08);
-      border-radius: 20px;
-    }
-
-    p {
-      display: none;
-    }
+  &:hover {
+    box-shadow: 0 0.225rem 0.25rem rgba(0, 0, 0, 0.1);
   }
-  /* End First Blog */
-
   /* Animation Styles */
   transform: scale(0.9);
   opacity: 0;
   animation: ${bounceIn} 0.2s linear forwards;
   animation-delay: ${props => props.index * 0.2}s;
   /* End Animation Styles */
+  position: relative;
 
   > div {
     padding: 20px;
+    /* position: absolute; */
+    top: 0;
+    /* background: rgba(0,0,0,.8); */
+    /* height: 100%; */
+    /* color: white; */
   }
 
   .gatsby-image-wrapper {
-    /* height: 200px; */
+    height: 230px;
     margin-bottom: 0;
-    border-radius: 8px 8px 0 0;
   }
 
   img {
     margin-bottom: 0;
+  border-radius: .25rem .25rem 0 0;
   }
 
   h3 {
     margin-top: 0px;
     margin-bottom: 10px;
     color: ${props => props.theme.primaryTextColor};
+    /* color: white; */
 
     &:hover {
       color: ${props => props.theme.darkPrimaryColor};
@@ -130,12 +114,12 @@ const Blog = styled.div`
   }
 `
 
-const BlogsContainer = styled.div`
+const BlogsContainer = styled(Container)`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-auto-rows: auto;
-  grid-gap: 40px;
-  max-width: 1100px;
+  grid-gap: 60px;
+  /* max-width: 1100px; */
   margin: 0 auto;
 `
 
@@ -153,6 +137,8 @@ class BlogIndex extends React.Component {
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
         <Hero />
+        <Introduction />
+        <Projects />
         {/* <Bio /> */}
         <BlogsContainer>
           {posts.map(({ node }, index) => {
@@ -162,7 +148,6 @@ class BlogIndex extends React.Component {
                 <Img
                   sizes={node.frontmatter.featuredImage.childImageSharp.sizes}
                 />
-                {/* <img src={node.frontmatter.featuredImage.childImageSharp.sizes.src} alt=""/> */}
                 <div>
                   <h3>
                     <Link to={node.fields.slug}>{title}</Link>

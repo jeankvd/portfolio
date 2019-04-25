@@ -1,5 +1,6 @@
 import React from "react"
 import styled, { keyframes } from "styled-components"
+import { Container } from "../general/GeneralStyles";
 
 /* WAVE STYLES */
 const drift = keyframes`
@@ -11,11 +12,9 @@ const Box = styled.div`
   width: 800px;
   height: 300px;
   height: 600px;
-  border-radius: 5px;
   box-shadow: 0 2px 30px rgba(black, 0.2);
   background: lighten(#f0f4c3, 10%);
   position: relative;
-  overflow: hidden;
   transform: translate3d(0, 0, 0) /* rotate(135deg) */;
 
   &::after {
@@ -42,11 +41,12 @@ const Wave = styled.div`
   top: 3%;
   left: 50%;
   background: #0af;
+  /* background: #90caf0; */
   width: 500px;
   height: 500px;
-  width: 900px;
-  height: 900px;
-  margin-left: -250px;
+  width: 1050px;
+  height: 1050px;
+  margin-left: -300px;
   margin-top: -250px;
   transform-origin: 50% 48%;
   border-radius: 43%;
@@ -67,29 +67,34 @@ const Wave2 = styled(Wave)`
 const WaveContainer = styled.div`
   max-width: 800px;
   margin-left: auto;
-  /* background: (top, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%);  */
-  /* background: #000; */
+  position: relative;
+  z-index: 100;
 
   img {
-      max-width: 50px;
+    /* max-width: 100px; */
+    max-width: 400px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(0, -50%);
+    z-index: 1;
   }
 `
 
-const Container = styled.div`
+const StyledContainer = styled(Container)`
   background: #fff;
-  width: 100vw;
-  margin-bottom: 200px;
-  overflow: hidden;
+  /* overflow-y: hidden; */
   display: flex;
   align-items: center;
 `
 
 const HeroText = styled.div`
+  min-width: 460px;
   h1 {
     color: ${props => props.theme.textPrimaryColor};
     font-size: 3rem;
     line-height: 4.5rem;
-    margin: 0 0 1.45rem;
+    /* margin: 0 0 1.45rem; */
     padding: 0;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
       Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
@@ -99,32 +104,34 @@ const HeroText = styled.div`
   }
 `
 
+const Wrapper = styled.div`
+  position: relative;
+  overflow: hidden;
+`
 const Hero = props => {
   return (
-    <Container>
-      <HeroText>
-        <h1>
-          Hey, I'm Jean 🤖🙋🏻‍♂️ <br />
-          Developer, thinker, <br />
-          {"&"} maker 👨‍💻💭.
-        </h1>
-      </HeroText>
-      <WaveContainer>
-        <img
-          src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1024px-React-icon.svg.png"
-          alt=""
-        />
-        <img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/LaravelLogo.png" alt="" />
-        <img src="https://s.w.org/style/images/about/WordPress-logotype-wmark.png" alt="" />
-        <img src="https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582747_1280.png" alt="" />
-        <img src="https://cdn.pixabay.com/photo/2017/08/05/11/16/logo-2582747_1280.pnghttps://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png" alt="" />
-        <Box>
-          <Wave1 />
-          <Wave2 />
-          <Wave />
-        </Box>
-      </WaveContainer>
-    </Container>
+    <Wrapper>
+      <StyledContainer>
+        <HeroText>
+          <h1>
+            Hey, I'm Jean 🤖🙋🏻‍♂️ <br />
+            Developer, thinker, <br />
+            {"&"} maker 👨‍💻💭.
+          </h1>
+        </HeroText>
+        <WaveContainer>
+          <img
+            src="https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/code_review_l1q9.svg"
+            alt=""
+          />
+          <Box>
+            <Wave1 />
+            <Wave2 />
+            <Wave />
+          </Box>
+        </WaveContainer>
+      </StyledContainer>
+    </Wrapper>
   )
 }
 

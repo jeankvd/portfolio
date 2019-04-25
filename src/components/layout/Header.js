@@ -5,6 +5,7 @@ import { Link } from "gatsby"
 const StyledHeader = styled.header`
   box-sizing: content-box;
   padding: 20px;
+  z-index: 111111111111111;
 
   box-shadow: 6px 2px 24px 8px rgba(0, 0, 0, 0.08);
   display: flex;

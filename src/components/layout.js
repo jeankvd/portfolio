@@ -15,6 +15,7 @@ const theme = {
   primaryTextColor: "#212121",
   secondaryTextColor: "#757575",
   dividerColor: "#BDBDBD",
+  maxWidth: "1280px"
 }
 
 const SiteContainer = styled.div`

@@ -11,15 +11,23 @@ const IntroductionContainer = styled(Container)`
 `
 
 const Logo = styled.div`
+  background: url("");
+`
+
+const ProfileImg = styled.img`
   height: 180px;
   width: 200px;
-  background: #8BCAF0;
+  /* background: #8bcaf0; */
+  object-fit: contain;
+  border-radius: 50%;
+  /* border-left: solid 1px black; */
+  margin-bottom: 0px;
 `
 
 const P = styled.p`
-  max-width: 500px;
+  max-width: 550px;
   margin: 0;
-  margin-left: 80px;
+  margin-left: 30px;
 
   font-size: 1.25rem;
   line-height: 3rem;
@@ -33,12 +41,12 @@ const P = styled.p`
 const Introduction = props => {
   return (
     <IntroductionContainer>
-      <Logo />
+      {/* <Logo /> */}
+      <ProfileImg src="/static/img.jpg" />
       <P>
-        I'm a <strong>developer</strong> and{" "}
-        <strong>full stack engineer</strong> currently residing in{" "}
-        <strong>Orlando, Fl</strong>. Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Laudantium sapiente
+        I'm a <strong>developer</strong> concentrated on{" "}
+        <strong>Front-end Engineering with ⚛︎React</strong> and <strong>䷮Wordpress development</strong> currently residing in{" "}
+        <strong>Orlando, Fl</strong>. I am currently <strong> available for hire!</strong>
       </P>
     </IntroductionContainer>
   )

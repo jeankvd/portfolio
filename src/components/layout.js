@@ -11,6 +11,7 @@ const theme = {
   primaryColor: "#2196F3",
   lightPrimaryColor: "#BBDEFB",
   textPrimaryColor: "rgba(0,0,0,.8)",
+  lightBgColor: "#cee9f9",
   accentColor: "#607D8B",
   primaryTextColor: "#212121",
   secondaryTextColor: "#757575",

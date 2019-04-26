@@ -54,9 +54,15 @@ to {
 
 const Blog = styled.div`
   /* overflow: hidden; */
+  background: linear-gradient(to right, #75c0ed 0%, #8bcaf0 100%);
+  color: white !important;
   box-shadow: 0 0.625rem 1.25rem rgba(0, 0, 0, 0.2);
-  transition: all linear .2s;
-  border-radius: .25rem;
+  transition: all linear 0.2s;
+  border-radius: 0.5rem;
+
+  h3 {
+    color: white !important;
+  }
 
   &:hover {
     box-shadow: 0 0.225rem 0.25rem rgba(0, 0, 0, 0.1);
@@ -85,7 +91,7 @@ const Blog = styled.div`
 
   img {
     margin-bottom: 0;
-  border-radius: .25rem .25rem 0 0;
+    border-radius: 0.25rem 0.25rem 0 0;
   }
 
   h3 {
@@ -116,11 +122,16 @@ const Blog = styled.div`
 
 const BlogsContainer = styled(Container)`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-auto-rows: auto;
   grid-gap: 60px;
   /* max-width: 1100px; */
   margin: 0 auto;
+`
+
+const Title = styled.h2`
+  text-align: center;
+  margin-bottom: 60px;
 `
 
 class BlogIndex extends React.Component {
@@ -140,14 +151,17 @@ class BlogIndex extends React.Component {
         <Introduction />
         <Projects />
         {/* <Bio /> */}
+        <Container>
+          <Title>Blog Posts</Title>
+        </Container>
         <BlogsContainer>
           {posts.map(({ node }, index) => {
             const title = node.frontmatter.title || node.fields.slug
             return (
               <Blog key={node.fields.slug} index={index}>
-                <Img
+                {/* <Img
                   sizes={node.frontmatter.featuredImage.childImageSharp.sizes}
-                />
+                /> */}
                 <div>
                   <h3>
                     <Link to={node.fields.slug}>{title}</Link>

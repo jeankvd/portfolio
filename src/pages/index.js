@@ -11,6 +11,7 @@ import Hero from "../components/index/Hero"
 import Introduction from "../components/index/Introduction"
 import Projects from "../components/index/Projects"
 import { Container } from "../components/general/GeneralStyles"
+import FadeInTopContainer from "../components/general/FadeInTopContainer"
 
 /* 
 https://kuon.space/
@@ -35,70 +36,20 @@ https://undraw.co/illustrations
 */
 
 /* 
-  On MagicaVoxel, create a 3d model of a developer and and make it the hero with three.js. add a parallax 3d effect
+  -On MagicaVoxel, create a 3d model of a developer and and make it the hero with three.js. add a parallax 3d effect
+  -Show off strength
+
 */
 
 /* Use Wave Blob as Title for pages */
 
-const bounceIn = keyframes`
-from {
-  transform: scale(.75) translate3d(-10px, 0, 0);
-  opacity: 0;
-}
-
-to {
-  opacity: 1;
-  transform: scale(1) translate3D(0px, 0 , 0);
-}
-`
-
 const Blog = styled.div`
-  /* overflow: hidden; */
-  background: linear-gradient(to right, #75c0ed 0%, #8bcaf0 100%);
-  color: white !important;
-  box-shadow: 0 0.625rem 1.25rem rgba(0, 0, 0, 0.2);
-  transition: all linear 0.2s;
-  border-radius: 0.5rem;
-
-  h3 {
-    color: white !important;
-  }
-
-  &:hover {
-    box-shadow: 0 0.225rem 0.25rem rgba(0, 0, 0, 0.1);
-  }
-  /* Animation Styles */
-  transform: scale(0.9);
-  opacity: 0;
-  animation: ${bounceIn} 0.2s linear forwards;
-  animation-delay: ${props => props.index * 0.2}s;
-  /* End Animation Styles */
   position: relative;
-
-  > div {
-    padding: 20px;
-    /* position: absolute; */
-    top: 0;
-    /* background: rgba(0,0,0,.8); */
-    /* height: 100%; */
-    /* color: white; */
-  }
-
-  .gatsby-image-wrapper {
-    height: 230px;
-    margin-bottom: 0;
-  }
-
-  img {
-    margin-bottom: 0;
-    border-radius: 0.25rem 0.25rem 0 0;
-  }
 
   h3 {
     margin-top: 0px;
     margin-bottom: 10px;
     color: ${props => props.theme.primaryTextColor};
-    /* color: white; */
 
     &:hover {
       color: ${props => props.theme.darkPrimaryColor};
@@ -106,25 +57,16 @@ const Blog = styled.div`
   }
 
   a {
-    text-decoration: none !important;
     box-shadow: none;
     color: inherit;
-  }
-
-  > div:nth-child(1) {
-    transition: all ease-in-out 0.3s;
-  }
-
-  &:hover > div:nth-child(1) {
-    /* margin-top: -10px; */
   }
 `
 
 const BlogsContainer = styled(Container)`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-auto-rows: auto;
-  grid-gap: 60px;
+  grid-gap: 24px;
   /* max-width: 1100px; */
   margin: 0 auto;
 `
@@ -158,22 +100,29 @@ class BlogIndex extends React.Component {
           {posts.map(({ node }, index) => {
             const title = node.frontmatter.title || node.fields.slug
             return (
-              <Blog key={node.fields.slug} index={index}>
-                {/* <Img
+              <FadeInTopContainer
+                offset={index * 0}
+                range={150}
+                key={node.fields.slug}
+                index={index}
+              >
+                <Blog key={node.fields.slug} index={index}>
+                  {/* <Img
                   sizes={node.frontmatter.featuredImage.childImageSharp.sizes}
                 /> */}
-                <div>
-                  <h3>
-                    <Link to={node.fields.slug}>{title}</Link>
-                  </h3>
-                  <small>{node.frontmatter.date}</small>
-                  <p
-                    dangerouslySetInnerHTML={{
-                      __html: node.frontmatter.description || node.excerpt,
-                    }}
-                  />
-                </div>
-              </Blog>
+                  <div>
+                    <h3>
+                      <Link to={node.fields.slug}>{title}</Link>
+                    </h3>
+                    <small>{node.frontmatter.date}</small>
+                    <p
+                      dangerouslySetInnerHTML={{
+                        __html: node.frontmatter.description || node.excerpt,
+                      }}
+                    />
+                  </div>
+                </Blog>
+              </FadeInTopContainer>
             )
           })}
         </BlogsContainer>

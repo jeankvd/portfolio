@@ -1,6 +1,7 @@
-import React from "react"
+import React, { useEffect, useRef } from "react"
 import styled from "styled-components"
-import { Container } from "../general/GeneralStyles"
+import { Container, FadeInTop } from "../general/GeneralStyles"
+import FadeInTopContainer from "../general/FadeInTopContainer"
 
 const IntroductionContainer = styled(Container)`
   display: flex;
@@ -42,12 +43,18 @@ const Introduction = props => {
   return (
     <IntroductionContainer>
       {/* <Logo /> */}
-      <ProfileImg src="/static/img.jpg" />
-      <P>
-        I'm a <strong>developer</strong> concentrated on{" "}
-        <strong>Front-end Engineering with ⚛︎React</strong> and <strong>䷮Wordpress development</strong> currently residing in{" "}
-        <strong>Orlando, Fl</strong>. I am currently <strong> available for hire!</strong>
-      </P>
+      <FadeInTopContainer range={150} offset={125}>
+        <ProfileImg src="/static/img.jpg" />
+      </FadeInTopContainer>
+      <FadeInTopContainer range={150} offset={200}>
+        <P>
+          I'm a <strong>developer</strong> concentrated on{" "}
+          <strong>Front-end Engineering with ⚛︎React</strong> and{" "}
+          <strong>䷮Wordpress development</strong> currently residing in{" "}
+          <strong>Orlando, Fl</strong>. I am currently{" "}
+          <strong> available for hire!</strong>
+        </P>
+      </FadeInTopContainer>
     </IntroductionContainer>
   )
 }

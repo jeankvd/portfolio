@@ -16,18 +16,25 @@ const FadeInTopContainer = props => {
 
       /* Calculate pixel offset and add user modifier (offset) */
       let pixelOffset =
-        window.scrollY - (window.innerHeight - elementTopOffset) + props.offset
+        window.innerHeight + window.scrollY - elementTopOffset + props.offset
 
       /* Calculate percent and add user modifier: range */
       let completionPercent = Math.max(pixelOffset, 0) / props.range
-console.log(elementRef, completionPercent);
 
       /* Style Transforms */
-      if (completionPercent > -0.5 && completionPercent < 1.5) {
+      if (completionPercent < -0.5) {
+        elementRef.current.style.transform =
+          "translate3d(0px, 32px, 0px) scale3d(.99, .99, 1)"
+        elementRef.current.style.opacity = 0
+      } else if (completionPercent > 1.5) {
+        elementRef.current.style.transform =
+          "translate3d(0px, 0px, 0px) scale3d(1, 1, 1)"
+        elementRef.current.style.opacity = 1
+      } else {
         elementRef.current.style.transform =
           "translate3d(0px, " +
           Math.max(32 - 32 * completionPercent, 0) +
-          "px, 0px) scale3d(0.99, 0.99, 1)"
+          "px, 0px) scale3d(1, 1, 1)"
         elementRef.current.style.opacity = completionPercent
       }
     })

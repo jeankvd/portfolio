@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from "react"
 import styled from "styled-components"
-import { Container, FadeInTop } from "../general/GeneralStyles"
+import { Container, FadeInTop, P } from "../general/GeneralStyles"
 import FadeInTopContainer from "../general/FadeInTopContainer"
 
 const IntroductionContainer = styled(Container)`
@@ -9,10 +9,6 @@ const IntroductionContainer = styled(Container)`
   justify-content: center;
   margin-bottom: 100px;
   margin-top: 50px;
-`
-
-const Logo = styled.div`
-  background: url("");
 `
 
 const ProfileImg = styled.img`
@@ -25,35 +21,31 @@ const ProfileImg = styled.img`
   margin-bottom: 0px;
 `
 
-const P = styled.p`
+const IntroP = styled(P)`
   max-width: 550px;
   margin: 0;
   margin-left: 30px;
-
+  color: #374a54;
   font-size: 1.25rem;
   line-height: 3rem;
-  color: #374a54;
-  font-family: Heebo, Helvetica Neue, Helvetica, Arial, sans-serif;
   font-weight: 400;
-  font-kerning: normal;
-  font-feature-settings: "kern", "liga", "clig", "calt", "kern";
 `
 
 const Introduction = props => {
   return (
     <IntroductionContainer>
       {/* <Logo /> */}
-      <FadeInTopContainer range={150} offset={125}>
+      {/* <FadeInTopContainer range={150} offset={-275}> */}
         <ProfileImg src="/static/img.jpg" />
-      </FadeInTopContainer>
-      <FadeInTopContainer range={150} offset={200}>
-        <P>
+      {/* </FadeInTopContainer> */}
+      <FadeInTopContainer range={150} offset={-275}>
+        <IntroP>
           I'm a <strong>developer</strong> concentrated on{" "}
           <strong>Front-end Engineering with ⚛︎React</strong> and{" "}
           <strong>䷮Wordpress development</strong> currently residing in{" "}
           <strong>Orlando, Fl</strong>. I am currently{" "}
           <strong> available for hire!</strong>
-        </P>
+        </IntroP>
       </FadeInTopContainer>
     </IntroductionContainer>
   )

@@ -56,10 +56,20 @@ const Blog = styled.div`
     }
   }
 
+  h5 {
+    margin: 0px;
+  }
+
   a {
     box-shadow: none;
     color: inherit;
   }
+`
+
+const BlogImg = styled(Img)`
+  max-height: 170px;
+  border-radius: 4px;
+  margin-bottom: 10px;
 `
 
 const BlogsContainer = styled(Container)`
@@ -101,25 +111,21 @@ class BlogIndex extends React.Component {
             const title = node.frontmatter.title || node.fields.slug
             return (
               <FadeInTopContainer
-                offset={index * 0}
+                offset={index * -85}
                 range={150}
                 key={node.fields.slug}
                 index={index}
               >
                 <Blog key={node.fields.slug} index={index}>
-                  {/* <Img
-                  sizes={node.frontmatter.featuredImage.childImageSharp.sizes}
-                /> */}
+                  <BlogImg
+                    sizes={node.frontmatter.featuredImage.childImageSharp.sizes}
+                  />
                   <div>
+                    <h5>Frontend</h5>
                     <h3>
                       <Link to={node.fields.slug}>{title}</Link>
                     </h3>
                     <small>{node.frontmatter.date}</small>
-                    <p
-                      dangerouslySetInnerHTML={{
-                        __html: node.frontmatter.description || node.excerpt,
-                      }}
-                    />
                   </div>
                 </Blog>
               </FadeInTopContainer>

@@ -1,6 +1,6 @@
 import React from "react"
 import styled, { keyframes } from "styled-components"
-import { Container } from "../general/GeneralStyles";
+import { Container, H1 } from "../general/GeneralStyles"
 
 /* WAVE STYLES */
 const drift = keyframes`
@@ -90,18 +90,6 @@ const StyledContainer = styled(Container)`
 
 const HeroText = styled.div`
   min-width: 460px;
-  h1 {
-    color: ${props => props.theme.textPrimaryColor};
-    font-size: 3rem;
-    line-height: 4.5rem;
-    /* margin: 0 0 1.45rem; */
-    padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-      Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-    text-rendering: optimizeLegibility;
-    font-kerning: normal;
-    font-feature-settings: "kern", "liga", "clig", "calt", "kern";
-  }
 `
 
 const Wrapper = styled.div`
@@ -113,11 +101,11 @@ const Hero = props => {
     <Wrapper>
       <StyledContainer>
         <HeroText>
-          <h1>
-            Hey, I'm Jean 🤖🙋🏻‍♂️ <br />
+          <H1>
+            Hey, I'm Jean 🌊🙋🏻‍♂️ <br />
             Developer, thinker, <br />
             {"&"} maker 👨‍💻💭.
-          </h1>
+          </H1>
         </HeroText>
         <WaveContainer>
           <img

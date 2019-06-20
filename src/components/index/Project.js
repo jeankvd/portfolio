@@ -1,7 +1,7 @@
 import React, { useEffect } from "react"
 import styled from "styled-components"
 import Tilt from "react-vanilla-tilt"
-import { P } from "../general/GeneralStyles";
+import { P } from "../general/GeneralStyles"
 
 const StyledProject = styled.div`
   width: 100% !important;
@@ -62,14 +62,9 @@ const Project = props => {
         <img src="https://jeankvd.github.io/img/wolf.gif" alt="" />
       ) : null}
       <div>
-        <h1>Luna, Schrodinger's Wolf</h1>
-        <span>Front End Development - React | Gatsby | Codepen</span>
-        <P>
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam aut
-          totam, expedita minus aliquid facilis eos cumque recusandae ducimus,
-          hic illo laborum ad! Fugit animi, pariatur omnis delectus dolor
-          labore!
-        </P>
+        <h1>{props.project.title}</h1>
+        <span>{props.project.tag}</span>
+        <P>{props.project.description}</P>
         <a href="#">Visit the Site</a>
       </div>
       {!props.reverse ? (

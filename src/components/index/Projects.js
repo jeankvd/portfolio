@@ -1,7 +1,62 @@
-import React from "react"
+import React, { useState } from "react"
 import styled, { keyframes } from "styled-components"
 import { Container } from "../general/GeneralStyles"
 import Project from "./Project"
+import ProjectsData from "../index/Projects"
+
+const ReactProjects = [
+  {
+    title: "Cyphr",
+    description:
+      "loreLorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam aut totam, expedita minus aliquid facilis eos cumque recusandae ducimus, hic illo laborum ad! Fugit animi, pariatur omnis delectus dolor labore!m",
+    tag: "Lead / Front End Developer - React | Laravel | Storybook | Jest",
+    img: "./featured-image.jpg",
+    category: "React",
+  },
+  {
+    title: "HF Reserve",
+    description:
+      "loreLorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam aut totam, expedita minus aliquid facilis eos cumque recusandae ducimus, hic illo laborum ad! Fugit animi, pariatur omnis delectus dolor labore!m",
+    tag: "Front End Developer - React | Laravel ",
+    img: "./featured-image.jpg",
+    category: "React",
+  },
+  {
+    title: "Prang Power",
+    description:
+      "loreLorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam aut totam, expedita minus aliquid facilis eos cumque recusandae ducimus, hic illo laborum ad! Fugit animi, pariatur omnis delectus dolor labore!m",
+    tag: "Front End Developer - React | Gatsby | Storybook",
+    img: "./featured-image.jpg",
+    category: "React",
+  },
+]
+
+const WordPressProjects = [
+  {
+    title: "Flippers Pizzeria",
+    description:
+      "loreLorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam aut totam, expedita minus aliquid facilis eos cumque recusandae ducimus, hic illo laborum ad! Fugit animi, pariatur omnis delectus dolor labore!m",
+    tag: "Front End Developer - WordPress | Vue | SCSS",
+    img: "./featured-image.jpg",
+    category: "WordPress",
+  },
+  {
+    title: "Proformance Roofing",
+    description:
+      "loreLorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam aut totam, expedita minus aliquid facilis eos cumque recusandae ducimus, hic illo laborum ad! Fugit animi, pariatur omnis delectus dolor labore!m",
+    tag: "Front End Developer - WordPress | Vue | SCSS",
+    img: "./featured-image.jpg",
+    category: "WordPress",
+  },
+  {
+    title: "Halfwall Brewery",
+    description:
+      "loreLorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam aut totam, expedita minus aliquid facilis eos cumque recusandae ducimus, hic illo laborum ad! Fugit animi, pariatur omnis delectus dolor labore!m",
+    tag: "Front End Developer - WordPress | SCSS",
+    img: "./featured-image.jpg",
+    category: "WordPress",
+  },
+]
 
 const Wrapper = styled.div`
   background: #182f4a;
@@ -66,15 +121,16 @@ const ProjectsTab = styled.div`
   margin: 0 auto;
   margin-bottom: 70px;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
 
   span {
     text-align: center;
     cursor: pointer;
     display: inline-block;
+    padding: 10px 20px;
+    width: 135px;
 
     &.active {
-      padding: 10px 20px;
       border-radius: 4px;
       background: #fff;
       color: black;
@@ -82,20 +138,33 @@ const ProjectsTab = styled.div`
   }
 `
 
+const Tabs = ["React", "WordPress"]
+
 const Projects = props => {
+  const [activeTab, setActiveTab] = useState(1)
+
   return (
     <Wrapper>
       <ProjectsContainer>
         <h2>Showcase</h2>
         <ProjectsTab>
-          <span>Wordpress</span>
-          <span className="active">Featured</span>
-          <span>React</span>
+          {Tabs.map((tab, index) => (
+            <span
+              onClick={() => setActiveTab(index)}
+              className={activeTab == index ? "active" : null}
+            >
+              {tab}
+            </span>
+          ))}
         </ProjectsTab>
         <section>
-          <Project />
-          <Project reverse={true} />
-          <Project />
+          {activeTab == 0
+            ? ReactProjects.map((project, index) => (
+                <Project project={project} reverse={index == 1} />
+              ))
+            : WordPressProjects.map((project, index) => (
+                <Project project={project} reverse={index == 1} />
+              ))}
         </section>
       </ProjectsContainer>
     </Wrapper>

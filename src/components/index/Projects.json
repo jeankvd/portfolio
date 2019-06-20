@@ -1,0 +1,44 @@
+[
+  {
+    "title": "Cyphr",
+    "description": "loreLorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam aut totam, expedita minus aliquid facilis eos cumque recusandae ducimus, hic illo laborum ad! Fugit animi, pariatur omnis delectus dolor labore!m",
+    "tag": "Lead / Front End Developer - React | Laravel | Storybook | Jest",
+    "img": "./featured-image.jpg",
+    "category": "React"
+  },
+  {
+    "title": "HF Reserve",
+    "description": "loreLorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam aut totam, expedita minus aliquid facilis eos cumque recusandae ducimus, hic illo laborum ad! Fugit animi, pariatur omnis delectus dolor labore!m",
+    "tag": "Front End Developer - React | Laravel ",
+    "img": "./featured-image.jpg",
+    "category": "React"
+  },
+  {
+    "title": "Prang Power",
+    "description": "loreLorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam aut totam, expedita minus aliquid facilis eos cumque recusandae ducimus, hic illo laborum ad! Fugit animi, pariatur omnis delectus dolor labore!m",
+    "tag": "Front End Developer - React | Gatsby | Storybook",
+    "img": "./featured-image.jpg",
+    "category": "React"
+  },
+  {
+    "title": "Flippers Pizzeria",
+    "description": "loreLorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam aut totam, expedita minus aliquid facilis eos cumque recusandae ducimus, hic illo laborum ad! Fugit animi, pariatur omnis delectus dolor labore!m",
+    "tag": "Front End Developer - WordPress | Vue | SCSS",
+    "img": "./featured-image.jpg",
+    "category": "WordPress"
+  },
+  {
+    "title": "Proformance Roofing",
+    "description": "loreLorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam aut totam, expedita minus aliquid facilis eos cumque recusandae ducimus, hic illo laborum ad! Fugit animi, pariatur omnis delectus dolor labore!m",
+    "tag": "Front End Developer - WordPress | Vue | SCSS",
+    "img": "./featured-image.jpg",
+    "category": "WordPress"
+  },
+  {
+    "title": "Halfwall Brewery",
+    "description": "loreLorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam aut totam, expedita minus aliquid facilis eos cumque recusandae ducimus, hic illo laborum ad! Fugit animi, pariatur omnis delectus dolor labore!m",
+    "tag": "Front End Developer - WordPress | SCSS",
+    "img": "./featured-image.jpg",
+    "category": "WordPress"
+  }
+]

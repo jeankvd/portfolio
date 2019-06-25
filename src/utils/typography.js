@@ -4,8 +4,9 @@ import doelgerTheme from 'typography-theme-doelger'
 
 doelgerTheme.overrideThemeStyles = () => {
   return {
-    "a.gatsby-resp-image-link": {
+    "a": {
       boxShadow: `none`,
+      textShadow: `none`,
     },
   }
 }

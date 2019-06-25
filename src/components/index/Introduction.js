@@ -9,6 +9,13 @@ const IntroductionContainer = styled(Container)`
   justify-content: center;
   margin-bottom: 100px;
   margin-top: 50px;
+
+  @media (max-width: 850px) {
+    flex-direction: column;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
 `
 
 const ProfileImg = styled.img`
@@ -29,6 +36,10 @@ const IntroP = styled(P)`
   font-size: 1.25rem;
   line-height: 3rem;
   font-weight: 400;
+
+  @media (max-width: 850px) {
+    margin-left: 0px;
+  }
 `
 
 const Introduction = props => {
@@ -38,7 +49,7 @@ const Introduction = props => {
       {/* <FadeInTopContainer range={150} offset={-275}> */}
         <ProfileImg src="/static/img.jpg" />
       {/* </FadeInTopContainer> */}
-      <FadeInTopContainer range={150} offset={-275}>
+      {/* <FadeInTopContainer range={150} offset={-275}> */}
         <IntroP>
           I'm a <strong>developer</strong> concentrated on{" "}
           <strong>Front-end Engineering with ⚛︎React</strong> and{" "}
@@ -46,7 +57,7 @@ const Introduction = props => {
           <strong>Orlando, Fl</strong>. I am currently{" "}
           <strong> available for hire!</strong>
         </IntroP>
-      </FadeInTopContainer>
+      {/* </FadeInTopContainer> */}
     </IntroductionContainer>
   )
 }

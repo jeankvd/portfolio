@@ -2,6 +2,7 @@ import styled from "styled-components"
 
 export const Container = styled.div`
   margin: 0 auto;
+  width: 95vw;
   max-width: ${props => props.theme.maxWidth};
 `
 
@@ -17,6 +18,12 @@ export const H1 = styled.h1`
   text-rendering: optimizeLegibility;
   font-kerning: normal;
   font-feature-settings: "kern", "liga", "clig", "calt", "kern";
+
+  @media (max-width: 600px) {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+
 `
 
 const H3 = styled.h3`

@@ -2,31 +2,43 @@ import React, { useState } from "react"
 import styled, { keyframes } from "styled-components"
 import { Container } from "../general/GeneralStyles"
 import Project from "./Project"
-import ProjectsData from "../index/Projects"
 
 const ReactProjects = [
   {
     title: "Cyphr",
-    description:
-      "loreLorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam aut totam, expedita minus aliquid facilis eos cumque recusandae ducimus, hic illo laborum ad! Fugit animi, pariatur omnis delectus dolor labore!m",
-    tag: "Lead / Front End Developer - React | Laravel | Storybook | Jest",
-    img: "./featured-image.jpg",
-    category: "React",
-  },
-  {
-    title: "HF Reserve",
-    description:
-      "loreLorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam aut totam, expedita minus aliquid facilis eos cumque recusandae ducimus, hic illo laborum ad! Fugit animi, pariatur omnis delectus dolor labore!m",
-    tag: "Front End Developer - React | Laravel ",
-    img: "./featured-image.jpg",
+    description: `Lead the development of a third party tool
+    that manages the creation of quotes for Proformance Roofing. As the Lead Developer
+    I introduced the team to styled-components, Storybook for component documentation and to Jest and 
+    react-testing-library for testing the application.
+    `,
+    tag: "Front End Engineer - React | Laravel | Storybook | Jest",
+    img:
+      "https://res.cloudinary.com/dub9ykyuq/image/upload/v1561076815/cyphr_xpgvrf.gif",
     category: "React",
   },
   {
     title: "Prang Power",
-    description:
-      "loreLorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam aut totam, expedita minus aliquid facilis eos cumque recusandae ducimus, hic illo laborum ad! Fugit animi, pariatur omnis delectus dolor labore!m",
-    tag: "Front End Developer - React | Gatsby | Storybook",
-    img: "./featured-image.jpg",
+    description: `
+    This rewards app for Ticonderoga has an ecommerce like system
+    where users can add their information (email, address), add currency (points), and
+    buy products and combines it with a static site (Gatsby).
+      `,
+    tag: "Front End Engineer - React | Gatsby | Storybook",
+    img:
+      "https://res.cloudinary.com/dub9ykyuq/image/upload/v1561076815/prang_avm6r3.png",
+    category: "React",
+  },
+  {
+    title: "HF Reserve",
+    description: `
+      Tool used by two of the biggest Health Service Providers in Florida 
+      (Health First Medical Group and Advent Health).
+      This app uses React and Laravel to keep track of seminars, consultations,
+      and people who signup to them.
+      `,
+    tag: "Front End Engineer - React | Laravel ",
+    img:
+      "https://res.cloudinary.com/dub9ykyuq/image/upload/v1561076819/hfreserve_mghw8n.gif",
     category: "React",
   },
 ]
@@ -34,33 +46,49 @@ const ReactProjects = [
 const WordPressProjects = [
   {
     title: "Flippers Pizzeria",
-    description:
-      "loreLorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam aut totam, expedita minus aliquid facilis eos cumque recusandae ducimus, hic illo laborum ad! Fugit animi, pariatur omnis delectus dolor labore!m",
+    description: `
+     Modern WordPress site created with Vue.js, SCSS, Custom Posts and ACF.
+     The use of Vue and heavy JS was necessary to create the catering
+     part of this website where clients can create an catering order.
+    `,
     tag: "Front End Developer - WordPress | Vue | SCSS",
-    img: "./featured-image.jpg",
+    img:
+      "https://res.cloudinary.com/dub9ykyuq/image/upload/v1561076816/Flippers_uwmjny.png",
     category: "WordPress",
+    link: "https://flipperspizzeria.com/",
   },
   {
     title: "Proformance Roofing",
-    description:
-      "loreLorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam aut totam, expedita minus aliquid facilis eos cumque recusandae ducimus, hic illo laborum ad! Fugit animi, pariatur omnis delectus dolor labore!m",
+    description: `
+      A WordPress site that uses Vue.js in various pages for a 
+      Quoting application that calculates the cost of having a roof serviced
+      through various parameters inputted by a user.
+    `,
+
     tag: "Front End Developer - WordPress | Vue | SCSS",
-    img: "./featured-image.jpg",
+    img:
+      "https://res.cloudinary.com/dub9ykyuq/image/upload/v1561076814/Proformance_fxdchj.png",
     category: "WordPress",
+    link: "https://www.proformanceroofs.com",
   },
   {
     title: "Halfwall Brewery",
-    description:
-      "loreLorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam aut totam, expedita minus aliquid facilis eos cumque recusandae ducimus, hic illo laborum ad! Fugit animi, pariatur omnis delectus dolor labore!m",
+    description: `
+    A WordPress theme created with SCSS and ACF using modern web practices like
+    BEM and. Created while working at three.two.one .
+    `,
     tag: "Front End Developer - WordPress | SCSS",
-    img: "./featured-image.jpg",
+    img:
+      "https://res.cloudinary.com/dub9ykyuq/image/upload/v1561076821/Halfwall_jjjvvr.png",
     category: "WordPress",
+    link: "https://halfwallbrewery.com",
   },
 ]
 
 const Wrapper = styled.div`
   background: #182f4a;
   padding: 80px 0px 40px 0px;
+  margin-bottom: 100px;
 `
 
 const waveAnimation = keyframes`
@@ -128,7 +156,7 @@ const ProjectsTab = styled.div`
     cursor: pointer;
     display: inline-block;
     padding: 10px 20px;
-    width: 135px;
+    width: 170px;
 
     &.active {
       border-radius: 4px;
@@ -138,10 +166,10 @@ const ProjectsTab = styled.div`
   }
 `
 
-const Tabs = ["React", "WordPress"]
+const Tabs = ["React", "WordPress & Vue"]
 
 const Projects = props => {
-  const [activeTab, setActiveTab] = useState(1)
+  const [activeTab, setActiveTab] = useState(0)
 
   return (
     <Wrapper>

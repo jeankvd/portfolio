@@ -26,10 +26,10 @@ const StyledLink = styled(Link)`
 const Header = e => {
   return (
     <StyledHeader>
-      <span>Logo</span>
-      <nav>
+      <span>Jean Diaz Portfolio</span>
+      {/* <nav>
         <StyledLink to="/">Blog</StyledLink>
-      </nav>
+      </nav> */}
     </StyledHeader>
   )
 }

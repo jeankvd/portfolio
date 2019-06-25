@@ -16,7 +16,6 @@ const TopFooter = styled.div`
   background: ${props => props.theme.lightBgColor};
   padding: 50px;
   text-align: center;
-  margin-top: 100px;
 
   > div {
     display: flex;
@@ -40,12 +39,18 @@ const BottomFooter = styled.div`
   padding: 20px;
 `
 
+const GatsbyImg = styled.img`
+  max-width: 20px;
+  margin-bottom: 0px;
+  vertical-align: text-bottom;
+`;
+
 const Footer = e => {
   return (
     <StyledFooter>
       <TopFooter>
         <div>
-          <h4>Let's Talk {" "}</h4>
+          <h4>Let's Talk </h4>
           <span>📨</span>
         </div>
 
@@ -55,7 +60,14 @@ const Footer = e => {
         <a href="mailto:jeankvdiaz@gmail.com">jeankvdiaz@gmail.com</a>
       </TopFooter>
       <BottomFooter>
-        <span>© {new Date().getFullYear()}, Built with + 🌮</span>
+        <span>
+          © {new Date().getFullYear()}, Built with{" "}
+          <GatsbyImg
+            src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMjAwIDEyMDAiIGZvY3VzYWJsZT0iZmFsc2UiPgogIDxwYXRoIGQ9Ik02MDAgMEMyNjguNiAwIDAgMjY4LjYgMCA2MDBzMjY4LjYgNjAwIDYwMCA2MDAgNjAwLTI2OC42IDYwMC02MDBTOTMxLjQgMCA2MDAgMHpNMjY2LjYgOTMzLjNDMTc2LjEgODQyLjggMTMxIDcyNC42IDEyOS42IDYwNkw1OTQgMTA3MC40Yy0xMTguNi0xLjQtMjM2LjgtNDYuNS0zMjcuNC0xMzcuMXptNDM3LjcgMTI2LjFMMTQwLjYgNDk1LjdjNDcuNS0yMTAuMSAyMzUtMzY3LjEgNDU5LjQtMzY3LjEgMTU2LjkgMCAyOTUuNSA3NyAzODEuMiAxOTQuOUw5MTUuNiAzNzlDODQ1LjggMjc5LjUgNzMwLjUgMjE0LjMgNjAwIDIxNC4zYy0xNjcuNyAwLTMxMC4zIDEwNy43LTM2My4zIDI1Ny41bDQ5MS42IDQ5MS42YzEyMy40LTQzLjcgMjE4LTE0OC4yIDI0Ny42LTI3Ny42SDc3MS40VjYwMGgzMDBjMCAyMjQuNS0xNTcgNDExLjktMzY3LjEgNDU5LjR6IiBmaWxsPSIjNjM5Ii8+Cjwvc3ZnPgo="
+            alt=""
+          />{" "}
+          + 🌮
+        </span>
       </BottomFooter>
     </StyledFooter>
   )

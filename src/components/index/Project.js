@@ -8,15 +8,33 @@ const StyledProject = styled.div`
   transition: border ease-in-out 0.4s;
   box-sizing: border-box;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 1fr;
   grid-auto-flow: dense;
   text-align: left;
   margin-bottom: 30px;
   color: #fff;
-  /* background: linear-gradient(135deg, #ff00ba 0%, #fae713 100%)!important; */
 
-  &:hover {
-    /* border: solid 5px black; */
+  &.reversed img:nth-of-type(2) {
+    display: none;
+  }
+
+  &:not(.reversed) img:nth-of-type(1) {
+    display: none;
+  }
+
+  @media (max-width: 950px) {
+    grid-template-columns: 1fr;
+    width: 700px!important;
+    max-width: 95vw;
+    margin: 0 auto;
+
+    &:not(.reversed) img:nth-of-type(1) {
+      display: block;
+    }
+
+    &:not(.reversed) img:nth-of-type(2) {
+      display: none;
+    }
   }
 
   > img {
@@ -24,6 +42,15 @@ const StyledProject = styled.div`
     border-radius: 10px;
     width: 75%;
     margin: 0 auto;
+
+    @media (max-width: 950px) {
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    &.reverse {
+      display: none;
+    }
   }
 
   h1 {
@@ -52,24 +79,27 @@ const StyledProject = styled.div`
   }
 `
 
+const ProjectContainer = styled.div`
+
+`
+
 const Project = props => {
   return (
     <StyledProject
       options={{ scale: 2, max: 25, width: 100 }}
       reverse={props.reverse}
+      className={props.reverse ? "reversed" : null}
     >
-      {props.reverse ? (
-        <img src="https://jeankvd.github.io/img/wolf.gif" alt="" />
-      ) : null}
-      <div>
+      <img src={props.project.img} alt="" />
+      <ProjectContainer>
         <h1>{props.project.title}</h1>
         <span>{props.project.tag}</span>
         <P>{props.project.description}</P>
-        <a href="#">Visit the Site</a>
-      </div>
-      {!props.reverse ? (
-        <img src="https://jeankvd.github.io/img/wolf.gif" alt="" />
-      ) : null}
+        {props.project.link ? (
+          <a href={props.project.link}>Visit the Site</a>
+        ) : null}
+      </ProjectContainer>
+      <img src={props.project.img} alt="" />
     </StyledProject>
   )
 }

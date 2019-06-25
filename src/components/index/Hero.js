@@ -41,7 +41,6 @@ const Wave = styled.div`
   top: 3%;
   left: 50%;
   background: #0af;
-  /* background: #90caf0; */
   width: 500px;
   height: 500px;
   width: 1050px;
@@ -70,6 +69,24 @@ const WaveContainer = styled.div`
   position: relative;
   z-index: 100;
 
+  @media (max-width: 1420px) {
+    max-width: 700px;
+  }
+
+  @media (max-width: 1310px) {
+    max-width: 600px;
+  }
+
+  @media (max-width: 700px) {
+    transform: translate(-10%);
+  }
+
+  @media (max-width: 600px) {
+    transform: translate(-40%);
+
+  }
+
+
   img {
     /* max-width: 100px; */
     max-width: 400px;
@@ -78,6 +95,10 @@ const WaveContainer = styled.div`
     top: 50%;
     transform: translate(0, -50%);
     z-index: 1;
+
+    @media (max-width: 1140px) {
+      display: none;
+    }
   }
 `
 
@@ -90,6 +111,17 @@ const StyledContainer = styled(Container)`
 
 const HeroText = styled.div`
   min-width: 460px;
+  z-index: 1;
+
+  @media (max-width: 1140px) {
+    min-width: 500px;
+  }
+
+  @media (max-width: 500px) {
+    /* min-width: 100%; */
+  }
+
+
 `
 
 const Wrapper = styled.div`

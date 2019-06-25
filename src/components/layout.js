@@ -46,7 +46,7 @@ class Layout extends React.Component {
         // }}
         // I want to keep it for future reference
         >
-          <Header />
+          {/* <Header /> */}
           <Content>{children}</Content>
           <Footer />
         </SiteContainer>

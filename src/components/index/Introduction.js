@@ -52,7 +52,7 @@ const Introduction = props => {
       {/* <FadeInTopContainer range={150} offset={-275}> */}
         <IntroP>
           I'm a <strong>developer</strong> concentrated on{" "}
-          <strong>Front-end Engineering with ⚛︎React</strong> and{" "}
+          <strong>Front-end Engineering with ⓋVue, ⚛︎React,</strong> and{" "}
           <strong>䷮Wordpress development</strong> currently residing in{" "}
           <strong>Orlando, Fl</strong>. I am currently{" "}
           <strong> available for hire!</strong>

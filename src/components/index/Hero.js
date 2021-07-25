@@ -136,7 +136,7 @@ const Hero = props => {
           <H1>
             Hey, I'm Jean 🌊🙋🏻‍♂️ <br />
             Developer, thinker, <br />
-            {"&"} maker 👨‍💻💭.
+            {"&"} creator 👨‍💻💭.
           </H1>
         </HeroText>
         <WaveContainer>

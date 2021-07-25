@@ -50,7 +50,7 @@ const Footer = e => {
     <StyledFooter>
       <TopFooter>
         <div>
-          <h4>Let's Talk </h4>
+          <h4>Let's Talk &nbsp;</h4>
           <span>📨</span>
         </div>
 
